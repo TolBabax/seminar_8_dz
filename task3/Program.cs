@@ -58,13 +58,10 @@ int[,] MatrixMulti(int[,] matrix1, int[,] matrix2, int rows, int cols)
     {
         for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            for (int x = 0; x < matrix1.GetLength(0); x++)
-            {
-                for (int y = 0; y < matrix2.GetLength(1); y++)
+                            for (int y = 0; y < matrix1.GetLength(1); y++)
                 {
-                    matrMulti[i,j] += matrix1[i,x]*matrix2[y,j];
+                    matrMulti[i,j] += matrix1[i,y]*matrix2[y,j];
                 }
-            }
         }
     }
     return matrMulti;
@@ -78,10 +75,8 @@ int[,] matrix = FillMatrix(rows, cols);
 PrintMatrix(matrix);
 System.Console.WriteLine();
 
-int rows2 = IntupNumber("Введите количество строк второй матрицы: ");
-int cols2 = IntupNumber("Введите количество столбцов второй матрицы: ");
 System.Console.WriteLine("Вторая матрица: ");
-int[,] matrix2 = FillMatrix(rows2, cols2);
+int[,] matrix2 = FillMatrix(rows, cols);
 PrintMatrix(matrix2);
 System.Console.WriteLine();
 
